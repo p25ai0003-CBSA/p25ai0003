@@ -1,0 +1,30 @@
+depth 1 fitted in 5.6s
+depth 2 fitted in 11.3s
+depth 3 fitted in 16.8s
+depth 4 fitted in 22.1s
+
+depth rounds  train    val
+    1     10  0.050  0.050
+    1     25  0.050  0.025
+    1     50  0.100  0.062
+    1    100  0.246  0.100
+    2     10  0.121  0.087
+    2     25  0.237  0.113
+    2     50  0.296  0.163
+    2    100  0.312  0.087
+    3     10  0.279  0.163
+    3     25  0.350  0.163
+    3     50  0.479  0.225
+    3    100  0.775  0.263
+    4     10  0.287  0.188
+    4     25  0.683  0.312
+    4     50  0.912  0.425
+    4    100  0.988  0.400
+
+SELECTED: {'depth': 4, 'T': 50, 'train': 0.9125, 'val': 0.425, 'test': 0.325}
+
+Heaviest training face: train position 46, identity 7
+  max weight 0.0803 (uniform start = 0.0042)
+  weak learners got it wrong in 43 of 50 rounds
+  correct-by-round: [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1]
+saved fig_q2b.png, boost_selected.npz

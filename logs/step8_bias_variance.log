@@ -1,0 +1,34 @@
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done   2 tasks      | elapsed:  3.5min
+[Parallel(n_jobs=-1)]: Done  22 out of  30 | elapsed: 10.9min remaining:  4.0min
+[Parallel(n_jobs=-1)]: Done  30 out of  30 | elapsed: 14.2min finished
+all 30 refits done in 14.2 min
+check: max |mean||p-e||^2 - (bias2+var)| = 3.33e-16  (should be ~0)
+
+Q3(a): selected models, R=30 refits
+tree (selected)        bias2=0.383861 var=0.652806 acc=48.17 +/- 4.65
+bagging (100 trees)    bias2=0.515002 var=0.024461 acc=76.71 +/- 3.99
+boosting (d4x50)       bias2=0.885339 var=0.022208 acc=27.58 +/- 7.47
+
+Q3(b): depth study, min_samples_leaf=2
+depth model      bias2       var           acc %
+    4 tree    0.859231  0.068722   9.58 +/-  1.68
+    4 bag     0.888977  0.013487  28.00 +/-  6.22
+   16 tree    0.636666  0.241399  27.67 +/-  3.23
+   16 bag     0.672127  0.020776  61.08 +/-  4.64
+ None tree    0.383861  0.652806  48.17 +/-  4.65
+ None bag     0.515002  0.024461  76.71 +/-  3.99
+
+Q3(c): leaf occupancy, disagreement, variance removed, accuracy gain
+depth  leaves mean/leaf single disagree  var cut var cut % gain pts
+    4     5.1     47.01  0.000   0.9463   0.0552     80.37    18.42
+   16    18.2     13.21  0.000   0.8878   0.2206     91.39    33.42
+ None    40.0      6.00  0.000   0.8186   0.6283     96.25    28.54
+
+Q3(d): final table
+model      clean %  masked %     bias2       var
+tree         56.25     36.25  0.383861  0.652806
+bagging      85.00     71.25  0.515002  0.024461
+boosting     32.50     25.00  0.885339  0.022208
+
+saved q3_stats.json, q3_vectors.npz, fig_q3_depth.png

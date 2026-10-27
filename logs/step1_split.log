@@ -1,0 +1,4 @@
+train: (240, 4096) val: (80, 4096) test: (80, 4096)
+masked test: (80, 4096)
+zeros in masked block: True
+overlap between piles: 0 0 0

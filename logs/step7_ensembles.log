@@ -1,0 +1,35 @@
+
+Q2(c): equal learner counts (boosting depth 4)
+CHECK: bagging rows must match step 3 (25: val .838 test .700; 50: .850/.838; 100: .887/.850)
+model        T  train    val   test fit time s
+bagging     25  1.000  0.838  0.700       18.7
+boosting    25  0.683  0.312  0.312        5.5
+bagging     50  1.000  0.850  0.838       37.5
+boosting    50  0.912  0.425  0.325       11.1
+bagging    100  1.000  0.887  0.850       74.1
+boosting   100  0.988  0.400  0.450       22.1
+
+Heaviest training face: position 46, identity 7, max weight 0.0803 (start 0.0042)
+  wrong in 43 of 50 rounds; predicted label per round:
+  [7, 1, 2, 3, 12, 15, 14, 0, 2, 3, 24, 7, 4, 14, 39, 20, 28, 3, 7, 34, 4, 39, 20, 1, 2, 3, 24, 7, 37, 22, 20, 2, 3, 24, 7, 4, 39, 14, 2, 15, 21, 7, 4, 37, 14, 20, 4, 3, 24, 7]
+  most common wrong labels (label, count): [(3, 6), (2, 5), (4, 5), (14, 4), (20, 4)]
+
+Q2(d): frozen models (tree, bagging B=100, boosting depth 4 x 50)
+clean   tree   acc=0.5625 mean winning=0.9750
+clean   bag    acc=0.8500 mean winning=0.3885
+clean   boost  acc=0.3250 mean winning=0.1284
+masked  tree   acc=0.3625 mean winning=0.9938
+masked  bag    acc=0.7125 mean winning=0.2707
+masked  boost  acc=0.2500 mean winning=0.1295
+
+candidates (bagging correctness unchanged, boosting changes): [24, 74, 66, 51, 27, 23, 77, 43, 14, 67, 37, 22, 7, 38]
+
+CHOSEN test face 24, true identity 12
+  clean  bagging: winner 1 (25/100 votes), true-class votes 2, tree disagreement 0.8931
+  clean  boosting: winner 3 (q=0.1386), q(true)=0.0610
+  masked bagging: winner 1 (20/100 votes), true-class votes 3, tree disagreement 0.9085
+  masked boosting: winner 12 (q=0.1435), q(true)=0.1435
+  heaviest 10 training faces at last round carry 0.258 of the weight; their identities: [5, 5, 5, 8, 12, 29, 34, 34, 34, 38]
+  is identity 12 among them? True
+
+saved fig_q2c_face.png, fig_q2d.png

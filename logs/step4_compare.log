@@ -1,0 +1,15 @@
+clean   tree: acc=0.5625 conf=0.9750 | bagging(B=100): acc=0.8500 conf=0.3885
+masked  tree: acc=0.3625 conf=0.9938 | bagging(B=100): acc=0.7125 conf=0.2707
+
+bagging corrects the tree on test faces: [46, 13, 30, 12, 20, 58, 51, 61, 34, 57, 26, 27, 31, 35, 49, 55, 2, 33, 72, 48, 54, 25, 6, 9]
+both wrong on test faces: [24, 18, 63, 68, 75, 47, 0, 5, 73, 79, 52]
+
+[corrected] test face 46: true=23, tree=21, bagging=23, votes(true)=67, top3 votes=[(23, 67), (20, 6), (21, 5)]
+
+[corrected] test face 13: true=6, tree=35, bagging=6, votes(true)=55, top3 votes=[(6, 55), (35, 13), (17, 4)]
+
+[both wrong] test face 24: true=12, tree=1, bagging=1, votes(true)=2, top3 votes=[(1, 25), (3, 19), (13, 6)]
+
+[both wrong] test face 18: true=9, tree=7, bagging=7, votes(true)=8, top3 votes=[(7, 24), (17, 18), (2, 11)]
+
+saved fig_q1d.png

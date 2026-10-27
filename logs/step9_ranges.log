@@ -1,0 +1,4 @@
+eps   min 0.325  max 0.875  mean 0.662
+alpha min 1.718  max 4.394
+check alpha formula, max abs diff: 1.3322676295501878e-15
+max weight 0.0803; top-10 weight at last round 0.258
